@@ -1,0 +1,116 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #4E342E, #8D6E63);
+    font-family: Arial, sans-serif;
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+.container {
+    background: #FFF8E1;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    height: 350px;
+    padding: 20px;
+}
+.card-header {
+    background-color: #FFF8E1;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+}
+
+#log{
+    margin-top: -20px;
+    width: 360px;
+    margin-left: -20px;
+    margin-bottom: 20px;
+}
+
+#loginForm{
+width: 340px;
+}
+#in{
+    margin-bottom: 2rem;
+}
+
+#btnn{
+    width: 350px;
+    margin-top: 20px;
+     margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    border: 1px solid #6D4C41
+    ;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+    margin-left: -5px;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background-color: #6D4C41;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #5a2e0c;
+}
+
+.text-center {
+    text-align: center;
+    font-size: 14px;
+}
+
+.text-center a {
+    color: #6D4C41
+    ;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.text-center a:hover {
+    text-decoration: underline;
+}
+
+.headtext{
+    color: white;
+    font-weight: 60px;
+}
