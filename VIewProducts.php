@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
@@ -12,30 +11,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <style>
-        .footer {
-            /* position: relative !important; */
-            bottom: 0rem !important;
-            width: 100%;
-            background-color: #3b2f23 !important;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        html,
-        body {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        section {
-            flex: 1;
-        }
-    </style>
-
+    
 </head>
 
 <body>
@@ -61,7 +37,7 @@
     <!-- ********************************************************************************************************** -->
     <!-- ********************************************************************************************************** -->
     <div class="table-container">
-
+        
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <h2 class="text-center mb-3">All Products</h2>
             <a href="AddProduct.php" class="btn btn-primary fs-5"><i class="bi bi-plus-lg me-3"></i>Add Product</a>
@@ -79,7 +55,7 @@
             </thead>
             <tbody>
                 <?php
-                $connection = new pdo("mysql:host=localhost;dbname=cafeteriaa", "root", "01158353178");
+                $connection = new pdo("mysql:host=localhost;dbname=php project", "root", "Root@123");
                 try {
                     $stm = $connection->query("select * from products");
                     $result = $stm->fetchAll(PDO::FETCH_ASSOC);
@@ -88,13 +64,13 @@
                         echo "<td>{$category['id']}</td>";
                         echo "<td>{$category['name']}</td>";
                         echo "<td>{$category['price']}</td>";
-                        $stm = $connection->query("select * from categories");
-                        $result = $stm->fetchAll(PDO::FETCH_ASSOC);
-                        foreach ($result as $Cat) {
-                            if ($category['category_id'] == $Cat['id']) {
-                                echo "<td>{$Cat['name']}</td>";
+                            $stm = $connection->query("select * from categories");
+                            $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+                            foreach($result as $Cat){
+                                if($category['category_id'] == $Cat['id']){
+                                    echo "<td>{$Cat['name']}</td>";
+                                }
                             }
-                        }
                         echo "<td><img src='img/{$category['image']}' class='user-img' alt=''></td>";
                         echo "<td class='action-buttons'>";
                         echo "<button type='submit' name='view' class='btn btn-sm btn-view' data-bs-toggle='modal' data-bs-target='#userModal{$category['id']}' ><i class='bi bi-eye-fill'></i> View</button>";
@@ -105,82 +81,82 @@
                         echo "</form>";
                         echo "</td>";
                         echo "</tr>";
-                        /************************************************************/                         /************************************************************/                         /************************************************************/
+                                                /************************************************************/                         /************************************************************/                         /************************************************************/ 
                         echo "<div class='modal fade' id='userModal{$category['id']}' tabindex='-1' aria-labelledby='userModalLabel' aria-hidden='true'>";
-                        echo "<div class='modal-dialog modal-dialog-centered'>";
-                        echo "<div class='modal-content'>";
-                        echo "<div class='modal-header'>";
-                        echo "<h5 class='modal-title' id='userModalLabel'>Product Details</h5>";
-                        echo "<button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>";
+                            echo "<div class='modal-dialog modal-dialog-centered'>";
+                                echo "<div class='modal-content'>";
+                                    echo "<div class='modal-header'>";
+                                        echo "<h5 class='modal-title' id='userModalLabel'>Product Details</h5>";
+                                        echo "<button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>";
+                                    echo "</div>";
+                                    echo "<div class='modal-body text-center'>";
+                                        echo "<img src='img/{$category['image']}' alt='Product Image' class=' border border-warning rounded-circle' width='150'>";
+                                        echo "<ul class='list-group mt-3'>";
+                                            echo "<li class='list-group-item'><strong>ID:</strong> <span id='productId'>{$category['id']}</span></li>";
+                                            echo "<li class='list-group-item'><strong>Username:</strong> <span id='productName'>{$category['name']}</span></li>";
+                                            echo "<li class='list-group-item'><strong>PRICE:</strong> <span id='productPrice'>{$category['price']}</span></li>";
+                                        echo "</ul>";
+                                    echo "</div>";
+                                echo "</div>";
+                            echo "</div>";
                         echo "</div>";
-                        echo "<div class='modal-body text-center'>";
-                        echo "<img src='img/{$category['image']}' alt='Product Image' class=' border border-warning rounded-circle' width='150'>";
-
-                        echo "<ul class='list-group mt-3'>";
-                        echo "<li class='list-group-item'><strong>ID:</strong> <span id='productId'>{$category['id']}</span></li>";
-                        echo "<li class='list-group-item'><strong>Username:</strong> <span id='productName'>{$category['name']}</span></li>";
-                        echo "<li class='list-group-item'><strong>PRICE:</strong> <span id='productPrice'>{$category['price']}</span></li>";
-                        echo "</ul>";
-                        echo "</div>";
-                        echo "</div>";
-                        echo "</div>";
-                        echo "</div>";
-                        /************************************************************/
-                        /************************************************************/
+                        /************************************************************/ 
+                        /************************************************************/ 
                         echo "<div class='modal fade' id='editModal{$category['id']}' tabindex='-1' aria-labelledby='editModalLabel' aria-hidden='true'>";
-                        echo "<div class='modal-dialog modal-dialog-centered'>";
-                        echo "<div class='modal-content'>";
-                        echo "<div class='modal-header'>";
-                        echo "<h5 class='modal-title'>Edit Product</h5>";
-                        echo "<button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>";
+                            echo "<div class='modal-dialog modal-dialog-centered'>";
+                                echo "<div class='modal-content'>";
+                                    echo "<div class='modal-header'>";
+                                        echo "<h5 class='modal-title'>Edit Product</h5>";
+                                        echo "<button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>";
+                                    echo "</div>";
+                                    echo "<div class='modal-body'>";
+                                        echo "<form action='updateProduct.php' method='post' >";
+                                            echo "<input type='hidden' name='productId' value='{$category['id']}'>";
+                                            echo "<div class='mb-3'>";
+                                                echo "<label class='form-label'>Product Name</label>";
+                                                echo "<input type='text' class='form-control' name='productName' value='{$category['name']}' required>";
+                                            echo "</div>";
+                                            echo "<div class='mb-3'>";
+                                                echo "<label class='form-label'>Price</label>";
+                                                echo "<input type='number' min='10' class='form-control' name='productPrice' value='{$category['price']}' required>";
+                                            echo "</div>";
+                                            echo "<div class='mb-3'>";
+                                                echo "<label class='form-label'>Category</label>";
+                                                echo "<select class='form-select form-control ' name='productCategory' aria-label='Default select example'>";
+                                                echo "<option selected disabled>Open this select menu</option>";
+                                                    try{
+                                                        $stm = $connection->query("select * from categories");
+                                                        $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+                                                        foreach($result as $Cat){
+                                                            if($category['category_id'] == $Cat['id']){
+                                                                echo "<option selected value={$Cat['id']} >{$Cat['name']}</option>";
+                                                            } else{
+                                                                echo "<option value={$Cat['id']} >{$Cat['name']}</option>";
+                                                            }
+                                                            
+                                                        }
+                                                    } catch(PDOException $e){
+                                                        echo "<div class='alert alert-danger' role='alert'> A simple danger alert—check it out!</div>";
+                                                    } 
+                                            echo "</select>";
+                                            echo "</div>";
+                                            echo "<div class='mb-3'>";
+                                            echo "<label for='formFile' class='form-label'>Product Image</label>";
+                                            echo "<input class='form-control' name='productImage'  accept='image/*' type='file' id='formFile'>";
+                                            echo "</div>";
+                                            echo "<button type='submit' name='update' class='btn btn-primary'>Update</button>";
+                                        echo "</form>";
+                                    echo "</div>";
+                                echo "</div>";
+                            echo "</div>";
                         echo "</div>";
-                        echo "<div class='modal-body'>";
-                        echo "<form action='updateProduct.php' method='post' >";
-                        echo "<input type='hidden' name='productId' value='{$category['id']}'>";
-                        echo "<div class='mb-3'>";
-                        echo "<label class='form-label'>Product Name</label>";
-                        echo "<input type='text' class='form-control' name='productName' value='{$category['name']}' required>";
-                        echo "</div>";
-                        echo "<div class='mb-3'>";
-                        echo "<label class='form-label'>Price</label>";
-                        echo "<input type='number' min='10' class='form-control' name='productPrice' value='{$category['price']}' required>";
-                        echo "</div>";
-                        echo "<div class='mb-3'>";
-                        echo "<label class='form-label'>Category</label>";
-                        echo "<select class='form-select form-control ' name='productCategory' aria-label='Default select example'>";
-                        echo "<option selected disabled>Open this select menu</option>";
-                        try {
-                            $stm = $connection->query("select * from categories");
-                            $result = $stm->fetchAll(PDO::FETCH_ASSOC);
-                            foreach ($result as $Cat) {
-                                if ($category['category_id'] == $Cat['id']) {
-                                    echo "<option selected value={$Cat['id']} >{$Cat['name']}</option>";
-                                } else {
-                                    echo "<option value={$Cat['id']} >{$Cat['name']}</option>";
-                                }
-                            }
-                        } catch (PDOException $e) {
-                            echo "<div class='alert alert-danger' role='alert'> A simple danger alert—check it out!</div>";
-                        }
-                        echo "</select>";
-                        echo "</div>";
-                        echo "<div class='mb-3'>";
-                        echo "<label for='formFile' class='form-label'>Product Image</label>";
-                        echo "<input class='form-control' name='productImage'  accept='image/*' type='file' id='formFile'>";
-                        echo "</div>";
-                        echo "<button type='submit' name='update' class='btn btn-primary'>Update</button>";
-                        echo "</form>";
-                        echo "</div>";
-                        echo "</div>";
-                        echo "</div>";
-                        echo "</div>";
-                        /***************************************************************/
+                        /***************************************************************/ 
                     }
                 } catch (PDOException $e) {
                     echo "<div class='alert alert-danger' role='alert'> A simple danger alert—check it out!</div>";
                 }
 
-
+                
 
                 ?>
 
@@ -190,8 +166,7 @@
     </div>
     <!-- ********************************************************************************************************** -->
     <!-- ********************************************************************************************************** -->
-    <section></section>
-    <footer class="footer text-white mt-5 py-4  ">
+    <footer class="footer text-white mt-5 py-4 position-absolute ">
         <div class="container text-center">
             <div class="row">
                 <div class="col-sm-6">

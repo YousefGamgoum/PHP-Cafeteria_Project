@@ -1,5 +1,5 @@
 <?php
-$connection = new pdo("mysql:host=localhost;dbname=cafeteriaa","root","01158353178");
+$connection = new pdo("mysql:host=localhost;dbname=php project","root","Root@123");
 $CategoryName = $_POST['CategoryName'];
 try{
     if(strlen($CategoryName)>0){

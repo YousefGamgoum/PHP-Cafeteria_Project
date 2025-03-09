@@ -14,7 +14,7 @@ nav a:hover {
 /* ******************************************** Footer Style ***************************************************** */
 
 .footer {
-    position: relative;
+    position: relative !important;
     bottom: 0 !important;
     width: 100%;
     background-color: #3b2f23 !important;
