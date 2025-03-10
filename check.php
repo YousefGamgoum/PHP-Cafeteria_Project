@@ -5,11 +5,11 @@ session_start();
 // دالة لإنشاء الاتصال بقاعدة البيانات
 function getConnection()
 {
-    $DBName = "cafeteriaa";  // اسم قاعدة البيانات
+    $DBName = "php project";  // اسم قاعدة البيانات
     $host = "localhost";     // السيرفر
     $DBtype = "mysql";       // نوع قاعدة البيانات
     $userName = "root";      // اسم المستخدم
-    $userPassword = "";  // كلمة المرور
+    $userPassword = "Root@123";  // كلمة المرور
 
     try {
         // محاولة إنشاء الاتصال بقاعدة البيانات باستخدام PDO
@@ -87,7 +87,7 @@ function getUserOrders($userId, $dateFrom = null, $dateTo = null)
 
     $sql = "SELECT o.order_id, o.created_at as date, o.total_price, o.status, r.room_number as room_name
             FROM orders o
-            LEFT JOIN rooms r ON o.room_id = r.id  -- تعديل هنا
+            LEFT JOIN rooms r ON o.room_id = r.room_number  -- تعديل هنا
             WHERE o.user_id = :user_id";
 
     $params = [':user_id' => $userId];
@@ -235,6 +235,10 @@ if ($selectedOrderId) {
     <title>Admin Checks</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
     body {
         background: linear-gradient(to right, #4E342E, #8D6E63);
@@ -270,11 +274,14 @@ if ($selectedOrderId) {
     .con {
         margin-top: 50px;
     }
+    body{
+        background: linear-gradient(to right, #4E342E, #8D6E63);
+    }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg ">
+<nav class="navbar navbar-expand-lg" >
         <div class="container">
             <a class="navbar-brand text-uppercase fs-4" href="#">Coffee <span class="fs-4 display-5">Blend</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -283,13 +290,13 @@ if ($selectedOrderId) {
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-5 d-flex justify-content-end w-100">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Products</a>
-                    <a class="nav-link" href="list.php">Users</a>
-                    <a class="nav-link" href="orders.php">Manual Order</a>
-                    <a class="nav-link" href="check.php">Checks</a>
-                    <a class="nav-link" href="#" aria-disabled="true">Admin</a>
-                </div>
+                    <a class="nav-link active" aria-current="page" href="./admin.php">Home</a>
+                    <a class="nav-link" href="./VIewProducts.php">Products</a>
+                    <a class="nav-link" href="./list.php">Users</a>
+                    <a class="nav-link" href="./orders.php">Manual Order</a>
+                    <a class="nav-link" href="./check.php">Checks</a>
+                    <li class="nav-item "><a class=" nav-link  d-flex align-items-center" id="logoutBtn" href="logout.php"><i class="bi bi-box-arrow-left text-end  fw-bolder mx-1"></i>Logout</a></li>
+                        </div>
             </div>
         </div>
     </nav>
@@ -444,6 +451,9 @@ if ($selectedOrderId) {
         window.location.href = 'check.php';
     }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
