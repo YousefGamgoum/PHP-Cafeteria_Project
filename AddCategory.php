@@ -31,11 +31,14 @@
     left: 20px;
     padding: 10px 20px;
 }
+body{
+        background: linear-gradient(to right, #4E342E, #8D6E63);
+    }
     </style>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg  py-3" >
         <div class="container">
             <a class="navbar-brand text-uppercase fs-4" href="#">Coffee <span class="fs-4 display-5">Blend</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -44,19 +47,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-5 d-flex justify-content-end w-100">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="./admin.php">Home</a>
                     <a class="nav-link" href="./VIewProducts.php">Products</a>
-                    <a class="nav-link" href="#">Users</a>
-                    <a class="nav-link" href="#">Manual Order</a>
-                    <a class="nav-link" href="screen10.php">Checks</a>
-                    <a class="nav-link" href="#" aria-disabled="true">Admin</a>
-                </div>
+                    <a class="nav-link" href="./list.php">Users</a>
+                    <a class="nav-link" href="./orders.php">Manual Order</a>
+                    <a class="nav-link" href="./check.php">Checks</a>
+                    <li class="nav-item "><a class=" nav-link  d-flex align-items-center" id="logoutBtn" href="logout.php"><i class="bi bi-box-arrow-left text-end  fw-bolder mx-1"></i>Logout</a></li>
+                        </div>
             </div>
         </div>
     </nav>
 <!-- ********************************************************************************************************** -->
 <!-- ********************************************************************************************************** -->
-<section id="addCategory" class="p-4 text-light w-50">
+<section id="addCategory" style="margin-top: 15rem !important;" class="p-4 text-light w-50">
         <a href="AddProduct.php" class="btn btn-danger text-start" style="position: absolute;"><i class="bi bi-arrow-left me-3"></i>Back</a>
         <h2 class="text-center mb-4">Add Category</h2>
         
@@ -73,30 +76,7 @@
     </section>
 <!-- ********************************************************************************************************** -->
 <!-- ********************************************************************************************************** -->
-<footer class="footer text-white mt-5 py-4 position-absolute ">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-sm-6">
-                    <h5>Customer service</h5>
-                    <a class="text-warning" href="tel:+2010000952" target="_blank">Phone</a><br />
-                    <a class="text-warning" href="mailto:coffee.cofee1190002911@gmail.com" target="_blank">Email</a><br />
-                    <a class="text-warning" href="https://wa.me//+2010000952" target="_blank"
-                        id="whatsapp">Whatsapp</a><br />
-                </div>
-                <div class="col-sm-6">
-                    <h5>Our stores</h5>
-                    <a class="text-warning" href="https://www.google.com/maps?q=Cairo,Egypt"
-                        target="_blank">Cairo</a><br />
-                    <a class="text-warning" href="https://www.google.com/maps?q=Alex,Egypt"
-                        target="_blank">Alex</a><br />
-                    <a class="text-warning" href="https://www.google.com/maps?q=Menofia,Egypt"
-                        target="_blank">Menofia</a><br />
-                </div>
-            </div>
-            <hr class="my-3" />
-            <h6>&copy; All rights reserved to Coffee</h6>
-        </div>
-    </footer>
+
     <script src="./main.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"
