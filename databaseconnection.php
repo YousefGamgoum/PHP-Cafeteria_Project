@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
-$dbname = 'cafeteriaa';
+$dbname = 'php project';
 $username = 'root';
-$password = '01158353178';
+$password = 'Root@123';
 
 try {
     $connection = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);

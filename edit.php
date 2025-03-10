@@ -12,7 +12,6 @@ if (isset($_GET['id'])) {
         if (isset($_POST['update'])) {
             $username = $_POST['username'];
             $email = $_POST['email'];
-            $password = $_POST['password'];
             $role = $_POST['role'];
             $img = $_FILES['img']['name'];
 
@@ -22,8 +21,8 @@ if (isset($_GET['id'])) {
                 $img = $user['profile_picture'];
             }
 
-            $updateQuery = $connection->prepare("UPDATE users SET username = ?, email = ?, password = ?, role = ?, profile_picture = ? WHERE id = ?");
-            $updateQuery->execute([$username, $email, $password, $role, $img, $id]);
+            $updateQuery = $connection->prepare("UPDATE users SET username = ?, email = ?, role = ?, profile_picture = ? WHERE id = ?");
+            $updateQuery->execute([$username, $email, $role, $img, $id]);
 
             header("Location: list.php");
             exit();
@@ -118,6 +117,9 @@ if (isset($_GET['id'])) {
             border: 3px solid #FFC107;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+        body{
+        background: linear-gradient(to right, #4E342E, #8D6E63);
+    }
     </style>
 </head>
 
@@ -135,11 +137,6 @@ if (isset($_GET['id'])) {
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" value="<?php echo htmlspecialchars($user['password']); ?>" required>
             </div>
 
             <div class="mb-3">

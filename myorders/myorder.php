@@ -33,7 +33,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <h2 id="title-page">My Orders</h2>
 
-    <form id="filterForm" class="filter_data">
+    <form id="filterForm"  class="filter_data">
         <label>From: <input type="date" id="start_date" name="start_date"></label>
         <label>To: <input type="date" id="end_date" name="end_date"></label>
         <button type="submit">Filter</button>

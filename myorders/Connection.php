@@ -1,9 +1,9 @@
 <?php
 $dbType = 'mysql';
 $dbHost = 'localhost';
-$dbName = 'cafeteriaa';
+$dbName = 'php project';
 $userName = 'root';
-$password = '01158353178';
+$password = 'Root@123';
 
 $connection=new PDO("$dbType:host=$dbHost;dbname=$dbName",$userName,$password);
  $result = "select * from orders ORDER BY created_at DESC";

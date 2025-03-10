@@ -7,6 +7,10 @@
     <title>Dashboard - Cafeteria Style</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -192,12 +196,27 @@
             flex: 1;
         }
     </style>
+    <style>
+    nav {
+    background-color: #3b2f23 !important;
+    z-index: 999;
+    margin-top: 0rem !important;
+}
+
+nav a {
+    color: white !important;
+}
+
+nav a:hover {
+    color: #d2ab86 !important;
+}
+</style>
 </head>
 
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg ">
+    <nav class="navbar navbar-expand-lg" style="margin-top:-40px;">
         <div class="container">
             <a class="navbar-brand text-uppercase fs-4" href="#">Coffee <span class="fs-4 display-5">Blend</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -206,13 +225,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-5 d-flex justify-content-end w-100">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="./PHP project./VIewProducts.php">Products</a>
-                    <a class="nav-link" href="#">Users</a>
-                    <a class="nav-link" href="orders.php">Manual Order</a>
-                    <a class="nav-link" href="check.php">Checks</a>
-                    <a class="nav-link" href="#" aria-disabled="true">Admin</a>
-                </div>
+                    <a class="nav-link active" aria-current="page" href="./admin.php">Home</a>
+                    <a class="nav-link" href="./VIewProducts.php">Products</a>
+                    <a class="nav-link" href="./list.php">Users</a>
+                    <a class="nav-link" href="./orders.php">Manual Order</a>
+                    <a class="nav-link" href="./check.php">Checks</a>
+                    <li class="nav-item "><a class=" nav-link  d-flex align-items-center" id="logoutBtn" href="logout.php"><i class="bi bi-box-arrow-left text-end  fw-bolder mx-1"></i>Logout</a></li>
+                        </div>
             </div>
         </div>
     </nav>
@@ -242,7 +261,7 @@
                                 <tbody>
                                     <?php
                                     try {
-                                        $connection = new PDO("mysql:host=localhost;dbname=cafeteriaa", "root", "01158353178");
+                                        $connection = new PDO("mysql:host=localhost;dbname=php project", "root", "Root@123");
                                         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                                         $data = $connection->query('SELECT * FROM users');
                                         $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -281,26 +300,7 @@
         </div>
     </div>
     <section></section>
-    <footer class="footer text-white mt-5 py-4">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-sm-6">
-                    <h5>Customer service</h5>
-                    <a class="text-warning" href="tel:+2010000952" target="_blank">Phone</a><br />
-                    <a class="text-warning" href="mailto:coffee.cofee1190002911@gmail.com" target="_blank">Email</a><br />
-                    <a class="text-warning" href="https://wa.me//+2010000952" target="_blank" id="whatsapp">Whatsapp</a><br />
-                </div>
-                <div class="col-sm-6">
-                    <h5>Our stores</h5>
-                    <a class="text-warning" href="https://www.google.com/maps?q=Cairo,Egypt" target="_blank">Cairo</a><br />
-                    <a class="text-warning" href="https://www.google.com/maps?q=Alex,Egypt" target="_blank">Alex</a><br />
-                    <a class="text-warning" href="https://www.google.com/maps?q=Menofia,Egypt" target="_blank">Menofia</a><br />
-                </div>
-            </div>
-            <hr class="my-3" />
-            <h6>&copy; All rights reserved to Coffee</h6>
-        </div>
-    </footer>
+    
 
     <!-- Popup Modal -->
     <div class="popup-overlay" id="overlay"></div>
@@ -309,7 +309,9 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
     <script>
         function openPopup(id) {
             var overlay = document.getElementById('overlay');

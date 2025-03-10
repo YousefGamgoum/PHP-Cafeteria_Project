@@ -118,10 +118,28 @@ if (isset($_GET["errors"])) {
         .mb-3 {
             position: relative;
         }
+        nav {
+    background-color: #3b2f23 !important;
+    z-index: 999;
+}
+
+nav a {
+    color: white !important;
+}
+
+nav a:hover {
+    color: #d2ab86 !important;
+}
+body{
+        background: linear-gradient(to right, #4E342E, #8D6E63);
+    }
     </style>
+
 </head>
 
 <body>
+
+
 
     <div class="card">
         <div class="card-header">
