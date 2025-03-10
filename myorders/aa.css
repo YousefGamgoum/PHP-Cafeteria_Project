@@ -1,0 +1,147 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #6D4C41;
+    color: #4e4e4e;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #FFF8E1;
+    margin-top: 50px;
+}
+
+.filter_data {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.filter_data label {
+    font-size: 16px;
+    color: #FFF8E1;
+}
+
+.filter_data input {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #D4AC6D;
+}
+
+.filter_data button {
+    background-color: #D4AC6D;
+    color: #6D4C41;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.filter_data button:hover {
+    background-color: #A27B5C;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #D4AC6D;
+    font-size: 16px;
+}
+
+th {
+    background-color: #D4AC6D;
+    color: #6D4C41;
+    font-weight: bold;
+}
+
+td {
+    background-color: #FFF8E1;
+}
+
+td button {
+    padding: 5px 10px;
+    background-color: #8C6A4B;
+
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+td button:hover {
+    background-color: #D4AC6D;
+
+}
+
+.order-details {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #FFF8E1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#orderDetails {
+    display: none;
+    padding: 20px;
+    background-color: #FFF8E1;
+    border: 1px solid #D4AC6D;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#orderDetails h3 {
+    font-size: 28px;
+    color: #6D4C41;
+    text-align: center;
+}
+
+button[type="submit"] {
+    background-color: #FF6F61;
+
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button[type="submit"]:hover {
+    background-color: #FF3D2E;
+
+}
+
+#order-details {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+#orderDetails {
+    display: block !important;
+}

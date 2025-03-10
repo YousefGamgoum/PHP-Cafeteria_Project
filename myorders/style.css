@@ -1,0 +1,59 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #e6b800;
+    /* لون ذهبي */
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #ffcc66;
+    /* لون أصفر دافئ */
+    color: #5a3d00;
+    /* لون بني داكن */
+}
+
+.order-details {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity button {
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+    border: none;
+    background-color: #f4b400;
+    /* لون أصفر */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.filter_data {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 300px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: start;
+}
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+    align-items: center;
+    background-color: #f4f4f4;
+    /* لون خلفية هادئ */
+    padding: 20px;
+    border-radius: 10px;
+}

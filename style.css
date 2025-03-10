@@ -1,0 +1,173 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.slider{
+    height: 30px;
+}
+
+
+.content {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin-top: 40px;
+}
+
+nav{
+    background-color: #3b2f23 !important;
+    z-index: 999;
+    height: 350px; 
+    
+}
+#navBar {
+    background-color: #3b2f23 !important;
+    z-index: 999;
+}
+
+nav a {
+    color: white !important;
+}
+
+nav a:hover {
+    color: #d2ab86 !important;
+}
+
+
+
+.content {
+    margin-top: 5rem;
+    flex: 1;
+}
+@media (min-width: 1025px) {
+    .h-custom {
+        height: 60vh !important;
+    }
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+
+.container {
+    display: flex;
+    height: 100vh;
+    gap: 20px;
+    margin-left: 0 !important;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: #fff;
+    color: #000;
+    width: 211px;
+    height: 833px;
+    top: 110px;
+}
+
+.sidebar h5 {
+    padding: 20px;
+    cursor: pointer;
+    width: 211px;
+    height: 85px;
+    margin-left: 10px;
+}
+
+.sidebar h5:hover {
+    background-color: #E7E7E7;
+    width: 211px;
+    height: 85px;
+}
+
+.sidebar .account_info {
+    background-color: #E7E7E7;
+    width: 211px;
+    height: 85px;
+    top: 110px;
+    display: flex;
+    align-items: center;
+}
+
+.main-content {
+    flex: 3;
+    padding: 20px;
+}
+
+.main-content .nav .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    background-color: #ffffff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    text-decoration: none;
+    margin-top: 18px;
+    margin-bottom: -60px;
+    border: rgba(0, 0, 0, 0.403) solid 1px;
+    margin-left: -40px;
+}
+
+.main-content .nav .icon_setting {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    margin-top: 18px;
+    margin-left: 870px;
+}
+
+.main-content .contenet {
+    margin-top: 32px;
+    margin-left: 55px;
+}
+
+.main-content .contenet h5 {
+    padding-top: 13px;
+}
+
+.main-content form {
+    box-sizing: border-box;
+    margin-left: 54px;
+
+}
+
+.main-content form .txt_field {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.main-content form .txt_field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+    margin-left: 0;
+}
+
+form label {
+    font-size: 18px;
+}
+
+/*Media Screen*/
+
+/* Mobile */
+@media (max-width: 576px) {}
+
+/* Small Screens */
+@media (max-width:768px) {}
+
