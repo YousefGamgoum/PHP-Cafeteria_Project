@@ -1,0 +1,75 @@
+/* ******************************************** Nav Style ***************************************************** */
+nav {
+    background-color: #3b2f23 !important;
+    z-index: 999;
+}
+
+nav a {
+    color: white !important;
+}
+
+nav a:hover {
+    color: #d2ab86 !important;
+}
+/* ******************************************** Footer Style ***************************************************** */
+
+.footer {
+    position: relative !important;
+    bottom: 0 !important;
+    width: 100%;
+    background-color: #3b2f23 !important;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+/* ************************************************************************ */
+
+body {
+    background-color: #5D4037 !important;
+    box-sizing: border-box !important;
+}
+.table-container {
+    background: #F5E6C4 !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
+    margin: 50px auto !important;
+    width: 80% !important;
+    max-width: 900px !important;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3) !important;
+}
+.table th {
+    background: #6D4C41 !important; /* Brown */
+    color: white !important;
+    text-align: center !important;
+}
+.table td {
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+.user-img {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 3px solid gold !important;
+}
+.btn-view {
+    background: #6D4C41 !important;
+    color: white !important;
+    border-radius: 5px !important;
+}
+.btn-edit {
+    background: #FFC107 !important;
+    color: black !important;
+    border-radius: 5px !important;
+}
+.btn-delete {
+    background: #DC3545 !important;
+    color: white !important;
+    border-radius: 5px !important;
+}
+.action-buttons .btn {
+    margin: 0rem 0.75rem !important;
+
+}
+
